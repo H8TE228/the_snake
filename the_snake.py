@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import randint
 
 import pygame
 
@@ -76,7 +76,6 @@ class Apple(GameObject):
         pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
 
-
 class Snake(GameObject):
     length = 2
     body_color = (0, 255, 0)
@@ -142,7 +141,8 @@ class Snake(GameObject):
         Сбрасывает змейку в начальное состояние.
         """
         self.length = 1
-        self.positions = [(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)]  # Центр экрана
+        self.positions = [(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)]
+        # Центр экрана
         self.direction = (1, 0)  # Движение вправо
         self.next_direction = self.direction
 
@@ -169,7 +169,10 @@ def main():
 
     # Создаём экземпляры классов
     apple = Apple()
-    snake = Snake(positions=[(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)], direction=RIGHT)
+    snake = Snake(
+        positions=[(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)],
+        direction=RIGHT
+    )
 
     # Генерируем первую позицию яблока
     apple.position = apple.randomize_position(snake.positions)
@@ -186,7 +189,8 @@ def main():
 
         # Проверка на столкновение с собой
         head_position = snake.get_head_position()
-        if head_position in snake.positions[1:]:  # Проверяем, находится ли голова в теле змейки
+        if head_position in snake.positions[1:]:
+            # Проверяем, находится ли голова в теле змейки
 
             pygame.quit()
             return
@@ -194,7 +198,8 @@ def main():
         # Проверка на съедание яблока
         if head_position == apple.position:
             snake.length += 5  # Увеличиваем длину змейки
-            apple.position = apple.randomize_position(snake.positions)  # Перемещаем яблоко
+            apple.position = apple.randomize_position(snake.positions)
+            # Перемещаем яблоко
 
         # Отрисовка игрового поля, яблока и змейки
         screen.fill(BOARD_BACKGROUND_COLOR)  # Заливка фона
@@ -203,8 +208,6 @@ def main():
 
         # Обновление экрана
         pygame.display.flip()
-
-
 
 
 if __name__ == '__main__':
@@ -245,9 +248,12 @@ if __name__ == '__main__':
 #                 game_object.next_direction = UP
 #             elif event.key == pygame.K_DOWN and game_object.direction != UP:
 #                 game_object.next_direction = DOWN
-#             elif event.key == pygame.K_LEFT and game_object.direction != RIGHT:
+#             elif event.key ==
+# pygame.K_LEFT and game_object.direction != RIGHT:
 #                 game_object.next_direction = LEFT
-#             elif event.key == pygame.K_RIGHT and game_object.direction != LEFT:
+#             elif event.key == (pygame.K_RIGHT and
+#                                game_object.direction != LEFT
+#                               ):
 #                 game_object.next_direction = RIGHT
 
 # Метод обновления направления после нажатия на кнопку

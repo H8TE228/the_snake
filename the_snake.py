@@ -40,15 +40,25 @@ clock = pygame.time.Clock()
 
 
 # Тут опишите все классы игры.
+# class GameObject:
+#     """Базовый класс для игровых объектов."""
+
+#     def __init__(self, position, body_color):
+#         self.position = position
+#         self.body_color = body_color
+
+#     def draw():
+#         """Отрисовка"""
+#         pass
 class GameObject:
     """Базовый класс для игровых объектов."""
 
-    def __init__(self, position, body_color):
+    def __init__(self, position=(0, 0), body_color=(255, 255, 255)):
         self.position = position
         self.body_color = body_color
 
-    def draw():
-        """Отрисовка"""
+    def draw(self):
+        """Отрисовка (переопределяется в дочерних классах)."""
         pass
 
 
@@ -90,7 +100,7 @@ class Snake(GameObject):
     body_color = (0, 255, 0)
     direction = RIGHT  # Направление по умолчанию (вправо)
 
-    def __init__(self, positions, direction):
+    def __init__(self, positions=None, direction=(1, 0)):
         """Инициализирует змейку с начальным положением и направлением."""
         self.positions = positions
         self.direction = direction

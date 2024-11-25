@@ -102,7 +102,7 @@ class Snake(GameObject):
 
     def __init__(self, positions=None, direction=(1, 0)):
         """Инициализирует змейку с начальным положением и направлением."""
-        super().__init__(positions[0], body_color=(0, 255, 0))  
+        super().__init__(positions[0], body_color=(0, 255, 0))
         # Устанавливаем позицию головы
         self.positions = positions if positions else [(0, 0)]
         self.direction = direction

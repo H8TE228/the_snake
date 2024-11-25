@@ -46,7 +46,7 @@ class GameObject:
     def __init__(self, position, body_color):
         self.position = position
         self.body_color = body_color
-    
+
     def draw():
         """Отрисовка"""
         pass
@@ -65,7 +65,7 @@ class Apple(GameObject):
 
     def randomize_position(self, snake_positions):
         """
-        Выбирает случайную позицию для яблока, 
+        Выбирает случайную позицию для яблока,
         не совпадающую с телом змейки.
         """
         while True:

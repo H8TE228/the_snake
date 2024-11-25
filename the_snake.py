@@ -97,6 +97,7 @@ class Snake(GameObject):
     """Класс, представляющий змейку."""
 
     length = 2
+    positions = [(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)]
     body_color = (0, 255, 0)
     direction = RIGHT  # Направление по умолчанию (вправо)
 
